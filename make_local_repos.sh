@@ -11,6 +11,8 @@ repostub="${PATH_SCRIPT}/repos.txt"
 repolist="/tmp/repos.txt"
 http="/var/www/html/repos/"
 
+[ "root" != "$USER" ] && exec sudo $0 "$@"
+
 if [ -f ${repolist} ]; then
 	echo "Re-using file with all of the enabled repos : ${repolist}"
 else
